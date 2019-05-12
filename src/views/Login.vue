@@ -20,11 +20,11 @@
           <el-form-item>
             <el-button type="primary" class="submit-btn" @click="submitForm('loginForm')">登录</el-button>
           </el-form-item>
-          <div>
+          <!-- <div>
             <p>还没有账号? 现在<router-link to="/register">注册</router-link></p>
-          </div>
+          </div> -->
         </el-form>
-        <button @click="test">测试</button>
+        <!-- <button @click="test">测试</button> -->
       </div>
     </section>
   </div>

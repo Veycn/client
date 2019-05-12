@@ -4,18 +4,27 @@
       <div class="desc">
         <p>请确认已经完成沟通!</p>
         <p>本次生成的账号授予目标是一个可靠的商家!</p>
+        <el-divider></el-divider>
+        <el-form ref="form" :model="form" label-width="90px" :rules="rules">
+          <el-form-item label="商家名称: " prop="name">
+            <el-input v-model="form.name"></el-input>
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="genAccount('form')">立即创建</el-button>
+            <el-button @click="resetForm('form')">重置</el-button>
+          </el-form-item>
+        </el-form>
       </div>
       <div class="gen">
-        <el-button type="danger" @click="genAccount">确认生成账号</el-button>
         <div class="account" v-if="isShow">
           <el-divider></el-divider>
           <el-row>
-            <span>账号:</span>
-            <span class="bold"> {{accout}}</span>
+            <span class="noselect">账号:</span>
+            <span class="bold">{{accout}}</span>
           </el-row>
           <el-row>
-            <span>密码:</span>
-            <span class="bold"> {{password}}</span>
+            <span class="noselect">密码:</span>
+            <span class="bold">{{password}}</span>
           </el-row>
         </div>
       </div>
@@ -30,16 +39,34 @@ export default {
     return {
       accout: "test@test.com",
       password: "doasj54654",
-      isShow: false
+      isShow: false,
+      form: {
+        name: ""
+      },
+      rules: {
+        name: [
+          { required: true, message: "用户名不能为空", trigger: "blur" },
+          { min: 2, max: 20, message: "长度应在2-20个字符之间" }
+        ]
+      }
     };
   },
   methods: {
-    genAccount(){
-      //生成账号
+    genAccount(formName) {
+      // 校验表单
+      this.$refs[formName].validate(valid => {
+        if (valid) {
+          console.log("允许生成");
+          //生成账号
 
-
-      // 让生成的账号显示
-      this.isShow = true
+          // 让生成的账号显示
+          this.isShow = true;
+        }
+      });
+    },
+    resetForm(formName) {
+      console.log(this.$refs[formName])
+      this.$refs[formName].resetFields();
     }
   }
 };
@@ -77,6 +104,7 @@ export default {
   color: #f20;
   font-weight: bord;
   font-size: 18px;
+  user-select: none;
 }
 .gen {
   flex: 2;
@@ -91,5 +119,9 @@ export default {
   font-weight: bold;
   color: darkblue;
   line-height: 35px;
+}
+.noselect {
+  user-select: none;
+  margin-right: 20px;
 }
 </style>

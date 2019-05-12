@@ -15,6 +15,7 @@ import MemberManage from './views/MemberManage.vue'
 import GenAccount from './views/GenAccount.vue'
 import GenCode from './views/GenCode.vue'
 import GetCash from './views/GetCash.vue'
+import AddTask from './views/AddTask.vue'
 
 Vue.use(Router)
 
@@ -38,7 +39,8 @@ const router = new Router({
         { path: "/menbermanage", component: MemberManage },
         { path: "/genaccount", component: GenAccount },
         { path: "/geninvitecode", component: GenCode },
-        { path: "/getcash", component: GetCash }
+        { path: "/getcash", component: GetCash },
+        { path: "/addtask", component: AddTask }
       ]
     },
     {

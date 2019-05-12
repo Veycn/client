@@ -6,7 +6,7 @@
         <div class="account" v-if="isShow">
           <el-divider></el-divider>
           <el-row>
-            <span>邀请码:</span>
+            <span class="noselect">邀请码:</span>
             <span class="bold"> {{code}}</span>
           </el-row>
         </div>
@@ -82,5 +82,8 @@ export default {
   font-weight: bold;
   color: darkblue;
   line-height: 35px;
+}
+.noselect{
+  user-select: none;
 }
 </style>

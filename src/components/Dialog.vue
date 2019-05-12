@@ -15,8 +15,8 @@
           label-width="120px"
           style="margin: 10px; width: auto;"
         >
-          <el-form-item label="收支类型:">
-            <el-select v-model="formData.type" placeholder="收支类型">
+          <el-form-item label="定位关键字:">
+            <el-select v-model="formData.type" placeholder="定位关键字">
               <el-option
                 v-for="(item, index) in form_type_list"
                 :key="index"
@@ -25,17 +25,17 @@
               ></el-option>
             </el-select>
           </el-form-item>
-          <el-form-item label="收支描述:">
-            <el-input v-model="formData.describe" placeholder="收支描述"></el-input>
+          <el-form-item label="本金:">
+            <el-input v-model="formData.describe" placeholder="本金"></el-input>
           </el-form-item>
-          <el-form-item label="收入:">
-            <el-input v-model="formData.income" placeholder="收入"></el-input>
+          <el-form-item label="佣金:">
+            <el-input v-model="formData.income" placeholder="佣金"></el-input>
           </el-form-item>
-          <el-form-item label="支出:">
-            <el-input v-model="formData.expend" placeholder="支出"></el-input>
+          <el-form-item label="要求:">
+            <el-input v-model="formData.expend" placeholder="要求"></el-input>
           </el-form-item>
-          <el-form-item label="账户现金:">
-            <el-input v-model="formData.cash" placeholder="账户现金"></el-input>
+          <el-form-item label="商家微信号:">
+            <el-input v-model="formData.cash" placeholder="商家微信号"></el-input>
           </el-form-item>
           <el-form-item label="备注:">
             <el-input type="textarea" v-model="formData.remark" placeholder="备注"></el-input>

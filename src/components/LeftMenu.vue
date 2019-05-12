@@ -32,7 +32,7 @@
 
 <script>
 export default {
-  name: "",
+  name: "LeftMenu",
   data() {
     return {
       items: [
@@ -40,6 +40,11 @@ export default {
           icon: "",
           path: "task",
           name: "审核任务"
+        },
+         {
+          icon: "",
+          path: "addtask",
+          name: "添加任务"
         },
         {
           icon: "",
